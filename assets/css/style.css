@@ -370,3 +370,24 @@ section ul li::after {
 		padding: 0;
 	}
 }
+
+@media screen and (max-width: 767px) {
+	header {
+	  flex-direction: column;
+	  padding: 0.5rem 1rem;
+	}
+	
+	nav {
+	  flex-direction: column;
+	  margin-top: 1rem;
+	}
+	
+	nav ul {
+	  flex-direction: column;
+	  align-items: flex-start;
+	}
+	
+	nav li {
+	  margin: 0.5rem 0;
+	}
+}
