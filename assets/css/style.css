@@ -166,3 +166,38 @@ section ul li::after {
 }
 
 /* ABOUT SECTION END */
+
+/* PROJECT IMAGE SECTION START */
+.project-images {
+	display: flex;
+	justify-content: center;
+}
+
+.project-images img {	
+	max-width: 100%;	
+	height: auto;	
+	display: none;
+}
+
+.project-images img.active {	
+	display: block;
+}
+
+.image-controls {	
+	display: flex;	
+	justify-content: center;	
+	margin-top: 1rem;
+}
+
+.image-controls button {	
+	background: none;	
+	border: none;	
+	font-size: 2rem;	
+	margin: 0 1rem;	cursor: 
+	pointer;
+}
+
+.image-controls button:hover {	
+	color: #ccc;
+}
+/* PROJECT IMAGE SECTION END */
