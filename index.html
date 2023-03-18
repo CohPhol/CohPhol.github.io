@@ -5,8 +5,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/style.css"></link>
-	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	<script src="assets/js/index.js"> </script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="assets/js/script.js"> </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
@@ -28,11 +28,29 @@
 		<h2>About Me</h2>
 		<p>I am</p>
 		<h1><strong>Paul Bryan Co</strong></h1>
-		<div class="identity">
-			<p>A Computer Science with a specialization of Software Engineering</p>
-			<p>A Full-Stack Developer</p>
-			<p>Strong foundation to software development</p>
-			<p>Striving to improve better</p>
+		<div class="row">
+			<div class="identity col">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title"><strong>Expertise and Experience</strong></h5>
+						<div><p class="card-text">Computer Science Major</p></div>
+						<div><p class="card-text">Software Engineering Specialization</p></div>
+						<div><p class="card-text">Full-Stack Developer</p></div>
+						<div><p class="card-text">Software Development Foundation</p></div>
+					</div>
+				</div>
+			</div>
+			<div class="identity col">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title"><strong>Hobbies and Interest</strong></h5>
+						<div><p class="card-text">Anime</p></div>
+						<div><p class="card-text">Gaming</p></div>
+						<div><p class="card-text">Music</p></div>
+						<div><p class="card-text">Programming</p></div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -50,21 +68,21 @@
 		<ul>
 			<li>
 				<h3>Codex Learning</h3>
-				<p>A Java Programming Language based game using LibGDX</p>
-				<div class="swiper-container">
-					<div class="swiper-wrapper">
-					  <div class="swiper-slide"><img src="image1.jpg"></div>
-					  <div class="swiper-slide"><img src="image2.jpg"></div>
-					  <div class="swiper-slide"><img src="image3.jpg"></div>
-					</div>
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
+				<p>A Java programming tutoring system that uses game-based and expert-based modeling 
+					to assess and improve the skills and knowledge of beginner programmers using LibGDX.</p>
+				<div class="project-images">
+					<img src="assets/img/codexlearning/Menu.PNG" alt="Menu">
+					<img src="assets/img/codexlearning/StageSelect.PNG" alt="StageSelect">
+					<img src="assets/img/codexlearning/Tutorial.PNG" alt="Tutorial">
+					<img src="assets/img/codexlearning/NPCInteract.PNG" alt="NPCInteract">
+					<img src="assets/img/codexlearning/QA.PNG" alt="QA">
+					<img src="assets/img/codexlearning/Practical.PNG" alt="Practical">
+					<img src="assets/img/codexlearning/Result.PNG" alt="Result">
 				</div>
-			</li>
-			<li>
-				<h3>Project Name</h3>
-				<p>Description of project</p>
-				<p>Link to live demo or code repository</p>
+				<div class="image-controls">
+					<button class="prev-image">&#10094;</button>
+					<button class="next-image">&#10095;</button>
+				</div>
 			</li>
 			<!-- Add more projects here -->
 		</ul>
@@ -76,16 +94,9 @@
 		<ul>
 			<li><i class="fa fa-envelope"></i><strong> Email:</strong> <a href="mailto:paulbryanco.cs@gmail.com">paulbryanco.cs@gmail.com</a></li>
 			<li><i class="fa fa-phone"></i><strong> Phone:</strong> +63-947-814-9956</li>
-			<li><i class="fa fa-github"></i><strong> GitHub:</strong> <a href="https://github.com/CohPhol">github.com/CohPhol</a></li>
-			<li><i class="fa fa-linkedin"></i><strong> LinkedIn:</strong><a href="https://www.linkedin.com/in/paul-bryan-co-0055a4216" target="_blank">Paul Bryan Co</a></li>
+			<li><i class="fa fa-github"></i><strong> GitHub:</strong> <a href="https://github.com/CohPhol" target="_blank">github.com/CohPhol</a></li>
+			<li><i class="fa fa-linkedin"></i><strong> LinkedIn:</strong><a href="https://www.linkedin.com/in/paul-bryan-co-0055a4216" target="_blank"> Paul Bryan Co</a></li>
 		</ul>
 	</section>
 </body>
 </html>
-
-<!-- <div class="container">
-		<div class = "About"><a href="#about">About</a></div>
-		<div class = "Skills"><a href="#skills">Skills</a></div>
-		<div class = "Projects"><a href="#projects">Projects</a></div>
-		<div class = "Contact"><a href="#contact">Contact</a></div>
-</div> -->

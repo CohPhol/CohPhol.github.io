@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     $('.next-image').click(function() {
         var currentImg = $(this).siblings('.project-images').find('img.active');
