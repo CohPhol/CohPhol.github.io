@@ -193,6 +193,7 @@ section ul li::after {
 .project-images {
 	display: flex;
 	justify-content: center;
+	position: relative;
 }
 
 .project-images img {	
@@ -201,26 +202,85 @@ section ul li::after {
 	display: none;
 }
 
-/* .project-images img:active {	
+.project-images img.active {	
 	display: block;
-} */
-
-.image-controls {	
-	display: flex;	
-	justify-content: center;	
-	margin-top: 1rem;
 }
 
-.image-controls button {	
-	background: none;	
-	border: none;	
-	font-size: 2rem;	
-	margin: 0 1rem;	
+.carousel {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+  
+.carousel-container {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+}
+  
+.carousel-item {
+	position: relative;
+	width: 100%;
+}
+  
+.carousel-item img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+  
+.carousel-caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+}
+  
+.carousel-prev, .carousel-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.5em;
+	background-color: transparent;
+	border: none;
+	color: #fff;
 	cursor: pointer;
+	outline: none;
+}
+  
+.carousel-prev {
+	left: 20px;
+}
+  
+.carousel-next {
+	right: 20px;
 }
 
-.image-controls button:hover {	
-	color: #ccc;
+.carousel-prev:hover, .carousel-next:hover {
+	transform: translateY(-50%) scale(1.5);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-indicator.active {
+    background-color: white;
 }
 /* PROJECT IMAGE SECTION END */
 
@@ -236,10 +296,10 @@ section ul li::after {
 	transform: rotate(-90deg);
 }
 
-.progress-wrapper:hover .progress-circle {
+.progress-wrapper .card:hover .progress-circle {
 	transform: rotate(-90deg) scale(1.1);
 }
-.progress-wrapper:hover .progress-label {
+.progress-wrapper .card:hover .progress-label {
 	transform: scale(1.1);
 }
   
@@ -285,6 +345,18 @@ section ul li::after {
 	letter-spacing: 1px;
 	color: #666;
 }
+
+#skills .card{
+	margin-top: 10px;
+	border: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+#skills .card .card-text{
+	text-align: center;
+}
+
 /* Skills END */
 
 @media only screen and (max-width: 900px){
