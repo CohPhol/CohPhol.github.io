@@ -201,9 +201,9 @@ section ul li::after {
 	display: none;
 }
 
-.project-images img.active {	
+/* .project-images img:active {	
 	display: block;
-}
+} */
 
 .image-controls {	
 	display: flex;	
@@ -232,11 +232,6 @@ section ul li::after {
 		padding-right: 0px;
 	}
 	#about .identity .card {
-		height: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
 		padding: 0;
-		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 	}
 }
