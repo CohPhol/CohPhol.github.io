@@ -1,0 +1,71 @@
+.progress-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+  
+.progress-circle {
+	transform: rotate(-90deg);
+}
+
+.progress-wrapper .card:hover .progress-circle {
+	transform: rotate(-90deg) scale(1.1);
+}
+.progress-wrapper .card:hover .progress-label {
+	transform: scale(1.1);
+}
+  
+.progress-bar-bg {
+	fill: none;
+	stroke: #ddd;
+	stroke-width: 8;
+	stroke-dasharray: 339;
+	stroke-linecap: round;
+}
+  
+.progress-bar {
+	fill: none;
+	stroke: #ff5a5f;
+	stroke-width: 8;
+	stroke-dasharray: 0 339;
+	stroke-linecap: round;
+	transition: stroke-dasharray 2s ease-out;
+}
+  
+.progress-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1.5rem;
+	font-size: 1.2rem;
+}
+  
+.progress-num {
+	font-size: 2.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	color: #ff5a5f;
+	position: absolute;
+	transform: rotate(90deg);	
+}
+  
+.progress-label {
+	margin-top: 7.5px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #666;
+}
+
+#skills .card{
+	margin-top: 10px;
+	border: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+#skills .card .card-text{
+	text-align: center;
+}
