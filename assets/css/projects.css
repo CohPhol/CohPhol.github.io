@@ -91,4 +91,7 @@
 .carousel-indicator.active {
     background-color: white;
 }
-/* PROJECT IMAGE SECTION END */
+@media screen and (max-width: 800px) {
+
+	
+}
