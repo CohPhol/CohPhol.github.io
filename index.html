@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="assets/css/about.css"></link>
 	<link rel="stylesheet" href="assets/css/projects.css"></link>
 	<link rel="stylesheet" href="assets/css/skills.css"></link>
-	<link rel="stylesheet" href="assets/css/contact.css"></link>
+	<!-- <link rel="stylesheet" href="assets/css/contact.css"></link> -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="assets/js/script.js"> </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,7 +47,7 @@
 		<p>I am</p>
 		<h1><strong>Paul Bryan Co</strong></h1>
 		<div class="row">
-			<div class="identity col">
+			<div class="identity col-l pl-3 pr-3">
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title"><strong>Expertise and Experience</strong></h5>
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="identity col">
+			<div class="identity col-l pl-3 pr-3">
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title"><strong>Hobbies and Interest</strong></h5>
@@ -188,45 +188,50 @@
 
 	<section id="projects">
 		<h2>Projects</h2>
-		<h3>Codex Learning</h3>
-		<p>A Java programming tutoring system that uses game-based and expert-based modeling 
-			to assess and improve the skills and knowledge of beginner programmers using LibGDX.</p>
-		<div class="carousel">
-		  	<div class="carousel-container">
-				<div class="carousel-item">
-					<img src="assets/img/codexlearning/Menu.PNG" alt="CLMenu">
+		<ul>
+			<li>
+				<h3>Codex Learning</h3>
+				<p class="paragraph">A Java programming tutoring system that uses game-based and expert-based modeling 
+					to assess and improve the skills and knowledge of beginner programmers using LibGDX.</p>
+				<div class="carousel">
+					<div class="carousel-container">
+						<div class="carousel-item">
+							<img src="assets/img/codexlearning/Menu.PNG" alt="CLMenu">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/codexlearning/StageSelect.PNG" alt="CLStageSelect">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/codexlearning/Tutorial.PNG" alt="CLTutorial">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/codexlearning/NPCInteract.PNG" alt="CLNPCInteract">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/codexlearning/QA.PNG" alt="CLQA">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/codexlearning/Practical.PNG" alt="CLPractical">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/codexlearning/Result.PNG" alt="CLResult">
+						</div>
+						<button class="carousel-prev">&#10094;</button>
+						<button class="carousel-next">&#10095;</button>
+						<div class="carousel-indicators">
+							<button class="carousel-indicator active"></button>
+							<button class="carousel-indicator"></button>
+							<button class="carousel-indicator"></button>
+							<button class="carousel-indicator"></button>
+							<button class="carousel-indicator"></button>
+							<button class="carousel-indicator"></button>
+							<button class="carousel-indicator"></button>
+						</div>
+					</div>
 				</div>
-				<div class="carousel-item">
-					<img src="assets/img/codexlearning/StageSelect.PNG" alt="CLStageSelect">
-				</div>
-				<div class="carousel-item">
-					<img src="assets/img/codexlearning/Tutorial.PNG" alt="CLTutorial">
-				</div>
-				<div class="carousel-item">
-					<img src="assets/img/codexlearning/NPCInteract.PNG" alt="CLNPCInteract">
-				</div>
-				<div class="carousel-item">
-					<img src="assets/img/codexlearning/QA.PNG" alt="CLQA">
-				</div>
-				<div class="carousel-item">
-					<img src="assets/img/codexlearning/Practical.PNG" alt="CLPractical">
-				</div>
-				<div class="carousel-item">
-					<img src="assets/img/codexlearning/Result.PNG" alt="CLResult">
-				</div>
-				<button class="carousel-prev">&#10094;</button>
-				<button class="carousel-next">&#10095;</button>
-				<div class="carousel-indicators">
-					<button class="carousel-indicator active"></button>
-					<button class="carousel-indicator"></button>
-					<button class="carousel-indicator"></button>
-					<button class="carousel-indicator"></button>
-					<button class="carousel-indicator"></button>
-					<button class="carousel-indicator"></button>
-					<button class="carousel-indicator"></button>
-				</div>
-			</div>
-		</div>
+			</li>
+			
+		</ul>
 	</section>
 
 	<section id="contact">
@@ -242,11 +247,6 @@
 			<li><i class="fa fa-linkedin"></i><strong> LinkedIn:</strong>
 				<a href="https://www.linkedin.com/in/paul-bryan-co-0055a4216" target="_blank"> Paul Bryan Co</a></li>
 		</ul>
-		<div class="hamburger">
-			<span class="bar"></span>
-			<span class="bar"></span>
-			<span class="bar"></span>
-		</div>
 	</section>
 </body>
 </html>

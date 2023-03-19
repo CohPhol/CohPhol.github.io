@@ -11,6 +11,10 @@
 	display: none;
 }
 
+#projects .paragraph {
+	text-align: justify;
+}
+
 .project-images img.active {	
 	display: block;
 }
@@ -93,5 +97,5 @@
 }
 @media screen and (max-width: 800px) {
 
-	
+
 }
