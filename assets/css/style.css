@@ -89,4 +89,9 @@ section ul li::after {
 	transform: translateX(-50%) rotate(45deg);
 	width: 60px
 }
-/* ALL SECTION SEGMENTS END */
+
+/* @media screen and (max-width: 800px){
+	section{
+		width: ;
+	}
+} */
