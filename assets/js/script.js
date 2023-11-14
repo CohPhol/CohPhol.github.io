@@ -1,5 +1,9 @@
 
 $(document).ready(function(){
+  var swiper = new Swiper(".mySwiper", {
+    effect: "cards",
+    grabCursor: true,
+  });
 
   $(".hamburger").click(function() {
     $(this).toggleClass("active");
