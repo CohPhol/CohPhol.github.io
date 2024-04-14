@@ -1,0 +1,16 @@
+body{
+    background: var(--bg-pink);
+    background: linear-gradient(170deg, var(--bg-pink) 40%, var(--bg-light-pink) 40%);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    z-index: -999;
+}
+
+.minimal-container{
+    max-width: 80%;
+    margin: 10rem auto 0 auto;
+    box-shadow: 0 25px 20px 15px var(--container-shadow);
+
+    z-index: -100;
+}

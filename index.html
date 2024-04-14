@@ -1,345 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-	<link rel="stylesheet" href="assets/css/swiper.css"></link>
-	<link rel="stylesheet" href="assets/css/style.css"></link>
-	<link rel="stylesheet" href="assets/css/nav.css"></link>
-	<link rel="stylesheet" href="assets/css/about.css"></link>
-	<link rel="stylesheet" href="assets/css/projects.css"></link>
-	<link rel="stylesheet" href="assets/css/skills.css"></link>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-	<script src="assets/js/script.js"> </script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/root.css">
+
+	<link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/aboutme.css">
+  <link rel="stylesheet" href="assets/css/started.css">
+  <link rel="stylesheet" href="assets/css/funfacts.css">
+  
+  <title>My Blog</title>	
 </head>
 <body>
-	<div class="swiper-container">
-		<div class="swiper mySwiper">
-			<div class="swiper-wrapper">
-			<div class="swiper-slide">I</div>
-			<div class="swiper-slide">Am</div>
-			<div class="swiper-slide">Not</div>
-			<div class="swiper-slide">Sure</div>
-			<div class="swiper-slide">What</div>
-			<div class="swiper-slide">To</div>
-			<div class="swiper-slide">Do</div>
-			<div class="swiper-slide">Here</div>
-			</div>
-		</div>
-	</div>
-	<!-- <header>
-		<nav class="nav-bar">
-			<h4 class="nav-branding">Portfolio</h4>
-			<ul class="nav-menu">
-				<li class="nav-item">
-					<a href="#about">About</a>
-				</li>
-				<li class="nav-item">
-					<a href="#skills">Skills</a>
-				</li>
-				<li class="nav-item">
-					<a href="#projects">Projects</a>
-				</li>
-				<li class="nav-item">
-					<a href="#contact">Contact</a>
-				</li>
-			</ul>
-			<div class="hamburger">
-				<span class="ham-bar"></span>
-				<span class="ham-bar"></span>
-				<span class="ham-bar"></span>
-			</div>
-		</nav>
-	</header>
+  <div class="minimal-container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-5">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">My Blog</a>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#about-me">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#started">How I Started</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#fun-fact">Fun Facts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="about-me" class="about-me-container">
+      <div class="back-picture">
+        <img src="assets/img/cat1.png" class="img-fluid" alt="" srcset="">
+      </div>
+      <div class="front-picture">
+        <img src="assets/img/cat1.png" class="img-fluid" alt="" srcset="">
+      </div>
+      <div class="header-text">
+        <div class="text">Hi, I'm Someone and this is my blog.&nbsp;</div>
+      </div>
+      <div class="body-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Ipsum quo blanditiis maiores quasi consequatur aspernatur laudantium, 
+        consequuntur laborum iure nihil, beatae est facere dolores autem minus enim corrupti deserunt praesentium?
+      </div>
+    </div>
 
-	<section id="about">
-		<h2 style="text-align: center; margin-left: auto; margin-right: auto;">About Me</h2>
-		<p>I am</p>
-		<h1><strong>Paul Bryan Co</strong></h1>
-		<div class="row">
-			<div class="identity col-l pl-3 pr-3">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title"><strong>Expertise and Experience</strong></h5>
-						<div><p class="card-text">Computer Science Major</p></div>
-						<div><p class="card-text">Software Engineering Specialization</p></div>
-						<div><p class="card-text">Full-Stack Developer</p></div>
-						<div><p class="card-text">Software Development Foundation</p></div>
-					</div>
-				</div>
-			</div>
-			<div class="identity col-l pl-3 pr-3">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title"><strong>Hobbies and Interest</strong></h5>
-						<div><p class="card-text">Anime</p></div>
-						<div><p class="card-text">Gaming</p></div>
-						<div><p class="card-text">Music</p></div>
-						<div><p class="card-text">Programming</p></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <div id="started" class="started-container">
+      <div class="row">
+        <div class="col-md-5 mx-auto">
+          <div class="header-text">How I Started...</div>
+          <div class="body-text">
+            Lorem ipsum dolor sit amet 
+            consectetur adipisicing elit. Suscipit, unde rem! 
+            Commodi ut ab id nisi voluptate officiis? Nesciunt 
+            voluptate inventore est accusamus nobis fugiat voluptatibus n
+            atus nisi accusantium exercitationem?
+          </div>
 
-	<section id="skills">
-		<h2>Skills</h2>
-		<ul>
-			<li class="skill">
-				<div>
-					<h3>C</h3>
-				  	<span class="bar-skill"><span class="C"><p class="percent">70%</p></span></span>
-				</div>
-				<div>
-					<h3>C#</h3>
-				  	<span class="bar-skill"><span class="Cs"><p class="percent">75%</p></span></span>
-				</div>
-				<div>
-					<h3>C++</h3>
-				  	<span class="bar-skill"><span class="Cp"><p class="percent">80%</p></span></span>
-				</div>
-				<div>
-					<h3>Python</h3>
-				  	<span class="bar-skill"><span class="Python"><p class="percent">95%</p></span></span>
-				</div>
-				<div>
-					<h3>Java</h3>
-				  	<span class="bar-skill"><span class="Java"><p class="percent">95%</p></span></span>
-				</div>
-				<div>
-					<h3>HTML</h3>
-				  	<span class="bar-skill"><span class="HTML"><p class="percent">90%</p></span></span>
-				</div>
-				<div>
-					<h3>CSS</h3>
-				  	<span class="bar-skill"><span class="CSS"><p class="percent">85%</p></span></span>
-				</div>
-				<div>
-					<h3>PHP</h3>
-				  	<span class="bar-skill"><span class="PHP"><p class="percent">80%</p></span></span>
-				</div>
-				<div>
-					<h3>JS</h3>
-				  	<span class="bar-skill"><span class="JS"><p class="percent">65%</p></span></span>
-				</div>
-				<div>
-					<h3>SQLITE</h3>
-				  	<span class="bar-skill"><span class="SQLITE"><p class="percent">70%</p></span></span>
-				</div>
-				<div class="bar-graph">
-					<div class="bar">
-					  	<div class="bar-fill" style="height: 70%;"></div>
-					  	<div class="bar-label">C</div>
-					</div>
-					<div class="bar">
-					  	<div class="bar-fill" style="height: 75%;"></div>
-					  	<div class="bar-label">C#</div>
-					</div>
-					<div class="bar">
-					  	<div class="bar-fill" style="height: 80%;"></div>
-					  	<div class="bar-label">C++</div>
-					</div>
-					<div class="bar">
-						<div class="bar-fill" style="height: 90%;"></div>
-						<div class="bar-label">Python</div>
-					</div>
-					<div class="bar">
-						<div class="bar-fill" style="height: 50%;"></div>
-						<div class="bar-label">Java</div>
-					</div>
-					<div class="bar">
-						<div class="bar-fill" style="height: 90%;"></div>
-						<div class="bar-label">HTML</div>
-					</div>
-					<div class="bar">
-						<div class="bar-fill" style="height: 90%;"></div>
-						<div class="bar-label">CSS</div>
-				  	</div>
-				  	<div class="bar">
-						<div class="bar-fill" style="height: 80%;"></div>
-						<div class="bar-label">PHP</div>
-				  	</div>
-				  	<div class="bar">
-						<div class="bar-fill" style="height: 65%;"></div>
-						<div class="bar-label">JavaScript</div>
-				  	</div>
-				  	<div class="bar">
-						<div class="bar-fill" style="height: 70%;"></div>
-						<div class="bar-label">SQLite</div>
-				  	</div>
-				</div>
-			</li>
-		</ul>
-	</section>
-	<section id="projects">
-		<h2>Projects</h2>
-		<ul>
-			<li>
-				<h3>Codex Learning</h3>
-				<p class="paragraph">A Java programming tutoring system that uses game-based and expert-based modeling 
-					to assess and improve the skills and knowledge of beginner programmers using LibGDX.</p>
-				<div id="CLIndicators" class="carousel slide">
-					<div class="carousel-indicators">
-					  	<button type="button" data-bs-target="#CLIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-					  	<button type="button" data-bs-target="#CLIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-					  	<button type="button" data-bs-target="#CLIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-						<button type="button" data-bs-target="#CLIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-					  	<button type="button" data-bs-target="#CLIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-						<button type="button" data-bs-target="#CLIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-					  	<button type="button" data-bs-target="#CLIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
-					</div>
-					<div class="carousel-inner">
-					  	<div class="carousel-item active">
-							<img src="assets/img/codexlearning/Menu.PNG" class="d-block w-100" alt="CLMenu">
-					  	</div>
-					  	<div class="carousel-item">
-							<img src="assets/img/codexlearning/StageSelect.PNG" class="d-block w-100" alt="CLStageSelect">
-					  	</div>
-					  	<div class="carousel-item">
-							<img src="assets/img/codexlearning/Tutorial.PNG" class="d-block w-100" alt="CLTutorial">
-					  	</div>
-						<div class="carousel-item">
-							<img src="assets/img/codexlearning/NPCInteract.PNG" class="d-block w-100" alt="CLNPCInteract">
-					  	</div>
-					  	<div class="carousel-item">
-							<img src="assets/img/codexlearning/QA.PNG" class="d-block w-100" alt="CLQA">
-					  	</div>
-					  	<div class="carousel-item">
-							<img src="assets/img/codexlearning/Practical.PNG" class="d-block w-100" alt="CLPractical">
-					  	</div>
-						<div class="carousel-item">
-							<img src="assets/img/codexlearning/Result.PNG" class="d-block w-100" alt="CLResult">
-					  	</div>
-					</div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#CLIndicators" data-bs-slide="prev">
-					  	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					  	<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#CLIndicators" data-bs-slide="next">
-					  	<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					  	<span class="visually-hidden">Next</span>
-					</button>
-				  </div>
-			</li>
-			<li>
-				<h3>Plague Knight</h3>
-				<p class="paragraph">A Java survival game featuring unique sprites and Java Swing-based graphics.</p>
-				<div id="PKIndicators" class="carousel slide">
-					<div class="carousel-indicators">
-					  	<button type="button" data-bs-target="#PKIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-					  	<button type="button" data-bs-target="#PKIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-					  	<button type="button" data-bs-target="#PKIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-						<button type="button" data-bs-target="#PKIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-					  	<button type="button" data-bs-target="#PKIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-					</div>
-					<div class="carousel-inner">
-					  	<div class="carousel-item active">
-							<img src="assets/img/plagueknight/Menu.PNG" class="d-block w-100" alt="PKMenu">
-					  	</div>
-					  	<div class="carousel-item">
-							<img src="assets/img/plagueknight/Difficulty.PNG" class="d-block w-100" alt="PKDiff">
-					  	</div>
-					  	<div class="carousel-item">
-							<img src="assets/img/plagueknight/Playstate.PNG" class="d-block w-100" alt="PKPlay">
-					  	</div>
-						<div class="carousel-item">
-							<img src="assets/img/plagueknight/Deadstate.PNG" class="d-block w-100" alt="PKDead">
-					  	</div>
-					  	<div class="carousel-item">
-							<img src="assets/img/plagueknight/ResultState.PNG" class="d-block w-100" alt="PKResult">
-					  	</div>
-					</div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#PKIndicators" data-bs-slide="prev">
-					  	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					  	<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#PKIndicators" data-bs-slide="next">
-					  	<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					  	<span class="visually-hidden">Next</span>
-					</button>
-				</div>
-			</li>
-			<li>
-				<h3>Lexical Analyzer</h3>
-				<p class="paragraph">A Java lexical analyzer is a program that breaks down source code into 
-					tokens, which are used by a compiler or interpreter. It reads the source code 
-					character by character, groups the characters into tokens according to the rules 
-					of the Java language, and outputs the tokens.</p>
-				<div id="lexIndicators" class="carousel slide">
-					<div class="carousel-indicators">
-					  	<button type="button" data-bs-target="#lexIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-					  	<button type="button" data-bs-target="#lexIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-					</div>
-					<div class="carousel-inner">
-					  	<div class="carousel-item active">
-							<img src="assets/img/lexical/menu.PNG" class="d-block w-100" alt="lexMenu">
-					  	</div>
-					  	<div class="carousel-item">
-							<img src="assets/img/lexical/lexical.PNG" class="d-block w-100" alt="lexLex">
-					  	</div>
-					</div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#lexIndicators" data-bs-slide="prev">
-					  	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					  	<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#lexIndicators" data-bs-slide="next">
-					  	<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					  	<span class="visually-hidden">Next</span>
-					</button>
-				</div>
-			</li>
-			<li>
-				<h3>Speech Recognition</h3>
-				<p class="paragraph">A Python speech recognition program uses Google's API to 
-					transcribe spoken words into text in real-time or from pre-recorded audio files. 
-					It supports multiple languages and dialects and is useful for voice-controlled devices, 
-					automated transcription, and speech-to-text applications.</p>
-				<div id="srIndicators" class="carousel slide">
-					<div class="carousel-indicators">
-					  	<button type="button" data-bs-target="#srIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-					  	<button type="button" data-bs-target="#srIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-					</div>
-					<div class="carousel-inner">
-					  	<div class="carousel-item active">
-							<img src="assets/img/speechrecog/plot.PNG" class="d-block w-100" alt="srPlot">
-					  	</div>
-					  	<div class="carousel-item">
-							<img src="assets/img/speechrecog/text.PNG" class="d-block w-100" alt="srMenu">
-					  	</div>
-					</div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#srIndicators" data-bs-slide="prev">
-					  	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					  	<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#srIndicators" data-bs-slide="next">
-					  	<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					  	<span class="visually-hidden">Next</span>
-					</button>
-				</div>
-			</li>
-		</ul>
-	</section>
+          <div class="body-text">
+            Lorem ipsum dolor sit amet 
+            consectetur adipisicing elit. Suscipit, unde rem! 
+            Commodi ut ab id nisi voluptate officiis? Nesciunt 
+            voluptate inventore est accusamus nobis fugiat voluptatibus n
+            atus nisi accusantium exercitationem?
+          </div>
+        </div>
+        <div class="col-md-5 mx-auto">
+          <img src="assets/img/cat1.png" class="img-fluid" alt="" srcset="">
+        </div>
+      </div>
+    </div>
 
-	<section id="contact">
-		<h2>Contact</h2>
-		<p>Feel free to reach out to me through any of the following:</p>
-		<ul>
-			<li><i class="fa fa-envelope"></i><strong> Email:</strong> 
-				<a href="mailto:paulbryanco.cs@gmail.com">paulbryanco.cs@gmail.com</a></li>
-			<li><i class="fa fa-phone"></i><strong> Phone:</strong> 
-				+63-947-814-9956</li>
-			<li><i class="fa fa-github"></i><strong> GitHub:</strong>
-				<a href="https://github.com/CohPhol" target="_blank">github.com/CohPhol</a></li>
-			<li><i class="fa fa-linkedin"></i><strong> LinkedIn:</strong>
-				<a href="https://www.linkedin.com/in/paul-bryan-co-0055a4216" target="_blank"> Paul Bryan Co</a></li>
-		</ul>
-	</section> -->
+    <div id="fun-fact" class="fun-fact-container">
+      <div class="header-text">
+        <div class="none-underline-header">Some&nbsp;</div>
+        <div class="underline-header">Fun Facts .&nbsp;</div>
+      </div>
+
+      <div class="row list-facts-container">
+        <div class="col-md-5">
+          <div class="row white-bg-container">
+            <i class="fa-regular fa-heart fa-xl heart-design"></i>
+            <div class="info">
+              Lorem ipsum dolor sit amet 
+              consectetur adipisicing elit. Suscipit, unde rem! 
+              Commodi ut ab id nisi voluptate officiis? Nesciunt 
+              voluptate inventore est accusamus nobis fugiat voluptatibus n
+              atus nisi accusantium exercitationem?
+            </div>
+          </div>
+
+          <div class="row pink-bg-container">
+            <i class="fa-regular fa-heart fa-xl heart-design"></i>
+            <div class="info">
+              Lorem ipsum dolor sit amet 
+              consectetur adipisicing elit. Suscipit, unde rem! 
+            </div>
+          </div>
+
+          <div class="row white-bg-container">
+            <i class="fa-regular fa-heart fa-xl heart-design"></i>
+            <div class="info">
+              Lorem ipsum dolor sit amet 
+              consectetur adipisicing elit. Suscipit, unde rem! 
+              Commodi ut ab id nisi voluptate officiis? Nesciunt 
+              voluptate inventore est accusamus nobis fugiat voluptatibus n
+              atus nisi accusantium exercitationem?
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-md-5">
+          <div class="row white-bg-container">
+            <i class="fa-regular fa-heart fa-xl heart-design"></i>
+            <div class="info">
+              Lorem ipsum dolor sit amet 
+              consectetur adipisicing elit. Suscipit, unde rem! 
+              Commodi ut ab id nisi voluptate officiis? Nesciunt 
+              voluptate inventore est accusamus nobis fugiat voluptatibus n
+              atus nisi accusantium exercitationem?
+            </div>
+          </div>
+
+          <div class="row pink-bg-container">
+            <i class="fa-regular fa-heart fa-xl heart-design"></i>
+            <div class="info">
+              Lorem ipsum dolor sit amet 
+              consectetur adipisicing elit. Suscipit, unde rem! 
+              Commodi ut ab id nisi voluptate officiis? Nesciunt 
+              voluptate inventore est accusamus nobis fugiat voluptatibus n
+              atus nisi accusantium exercitationem?
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
