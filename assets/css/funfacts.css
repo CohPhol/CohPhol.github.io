@@ -39,6 +39,7 @@
     z-index: -1;
 }
 
+
 .fun-fact-container .list-facts-container{
     display: flex;
     justify-content: space-evenly;
@@ -80,4 +81,9 @@
     position: absolute;
     top: 50%;
     left: -4%;
+}
+
+.fun-fact-container a{
+    text-decoration: none;
+    color: var(--fun-facts-black);
 }

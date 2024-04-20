@@ -18,4 +18,7 @@
     --fun-facts-underline: rgb(241, 213, 101);
     --fun-facts-bg-white: rgb(255, 255, 255);
     --fun-facts-bg-pink: rgb(251, 235, 226);
+    --fun-facts-black: rgb(0, 0, 0);
+
+    --advertisement-underline: rgb(251, 235, 226);
 }
