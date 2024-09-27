@@ -1,4 +1,5 @@
 const themeSwitch = document.getElementById('theme-switch');
+const themeText = document.getElementById('theme-color');
 const body = document.body;
 
 themeSwitch.addEventListener('change', function () {
@@ -6,6 +7,7 @@ themeSwitch.addEventListener('change', function () {
 
         body.classList.remove('light-mode');
         body.classList.add('dark-mode');
+        themeText.textContent = 'Dark';
         body.style.backgroundColor = '#333333';
         cards.forEach(card => {
             card.classList.remove('light-mode');
@@ -15,6 +17,7 @@ themeSwitch.addEventListener('change', function () {
 
         body.classList.remove('dark-mode');
         body.classList.add('light-mode');
+        themeText.textContent = 'Light';
         body.style.backgroundColor = '#ffffff';
         cards.forEach(card => {
             card.classList.remove('dark-mode');
