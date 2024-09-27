@@ -1,24 +1,10 @@
 :root {
-    --bg-pink: rgb(232, 219, 212);
-    --bg-light-pink: rgb(245, 240, 236);
-    --container-shadow: rgba(0, 0, 0, 0.3);
-
-    --navbar-underline: rgb(251, 235, 226);
-    --navbar-on-hover: rgb(236, 220, 217);
-
-    --about-me-bg-light-pink: rgb(247, 247, 245);
-    --about-me-bg-pink: rgb(246, 236, 227);
-    --about-me-header-text: rgb(228, 216, 126);
-    --about-me-bg-header-text: rgb(255, 255, 255);
-
-    --started-bg-light-pink: rgb(247, 247, 245);
-    --started-underline: rgb(251, 235, 226);
-
-    --fun-facts-bg-light-pink: rgb(246, 243, 236);
-    --fun-facts-underline: rgb(241, 213, 101);
-    --fun-facts-bg-white: rgb(255, 255, 255);
-    --fun-facts-bg-pink: rgb(251, 235, 226);
-    --fun-facts-black: rgb(0, 0, 0);
-
-    --advertisement-underline: rgb(251, 235, 226);
+    --light-bg: #fff;
+    --light-text: #000;
+    --dark-bg: #333;
+    --dark-text: #fff;
+    --switch-light-bg: #ddd;
+    --switch-dark-bg: #555;
+    --switch-knob-bg: white;
+    --switch-knob-shadow: rgba(0, 0, 0, 0.2);
 }
