@@ -4,88 +4,242 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv='cache-control' content='no-cache'>
-  <meta http-equiv='expires' content='0'>
-  <meta http-equiv='pragma' content='no-cache'>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="./assets/css/root.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/colormode.css">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      height: 100vh;
+      position: relative;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-  <title>Surprise</title>
+    body.dark-mode {
+      background-color: #1c1c1c;
+      color: #ffffff;
+    }
+
+    #button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      z-index: 10;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    button {
+      padding: 15px 30px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .balloon-container {
+      position: absolute;
+      bottom: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      animation: floatBalloon 8s ease-in-out infinite;
+    }
+
+    .balloon {
+      width: 60px;
+      height: 80px;
+      background: radial-gradient(circle at 50% 30%, #ff6666, #ff3333);
+      border-radius: 50% 50% 45% 45%;
+      box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+
+    .balloon::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      left: 20%;
+      width: 15px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    }
+
+    .rope {
+      width: 2px;
+      height: 100px;
+      background: linear-gradient(to bottom, #a3a3a3 50%, #7d7d7d);
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      animation: wobble 0.3s ease-in-out infinite;
+    }
+
+    @keyframes floatBalloon {
+      0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(-50%, -150vh);
+        opacity: 0;
+      }
+    }
+
+    @keyframes wobble {
+      0% {
+        transform: translateX(-50%) rotate(-1deg);
+      }
+
+      100% {
+        transform: translateX(-50%) rotate(1deg);
+      }
+    }
+
+    @keyframes popBalloon {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+
+    #message {
+      font-size: 22px;
+      font-weight: bold;
+      display: none;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    body.dark-mode #message {
+      color: #ffffff;
+    }
+
+    #dark-mode-toggle {
+      margin-top: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    #dark-mode-toggle:hover {
+      background-color: #555;
+    }
+
+    @media only screen and (max-width: 600px) {
+      button {
+        font-size: 16px;
+        padding: 12px 24px;
+      }
+
+      #message {
+        font-size: 20px;
+      }
+
+      .balloon {
+        width: 40px;
+        height: 60px;
+      }
+
+      .rope {
+        height: 80px;
+      }
+    }
+  </style>
 </head>
 
-<body class="light-mode">
+<body>
 
-  <!-- <div class="nav-container">
-    <button>All</button>
-    <button>About</button>
-    <button>Projects</button>
-
-  </div> -->
-
-  <div class="container" id="cardContainer">
-    <div class="card light-mode" draggable="true">
-      <div class="card-body">
-        <h5 class="card-title">Card 1</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-      </div>
-    </div>
-    <div class="card light-mode" draggable="true">
-      <div class="card-body">
-        <h5 class="card-title">Card 2</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-      </div>
-    </div>
-    <div class="card light-mode" draggable="true">
-      <div class="card-body">
-        <h5 class="card-title">Card 3</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-      </div>
-    </div>
-    <div class="card light-mode" draggable="true">
-      <div class="card-body">
-        <h5 class="card-title">Card 4</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-      </div>
-    </div>
-    <div class="card light-mode" draggable="true">
-      <div class="card-body">
-        <h5 class="card-title">Card 5</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-      </div>
-    </div>
-    <div class="card light-mode" draggable="true">
-      <div class="card-body">
-        <h5 class="card-title">Card 6</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-      </div>
-    </div>
-    <div class="card light-mode" draggable="true">
-      <div class="card-body">
-        <h5 class="card-title" id="theme-color">Light</h5>
-        <div class="theme-toggle">
-          <input type="checkbox" id="theme-switch">
-          <label for="theme-switch" class="switch"></label>
-        </div>
-      </div>
-    </div>
+  <div id="button-container">
+    <button onclick="startSurprise()">Click me!</button>
+    <div id="message">Wag ka na mastress</div>
+    <button id="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
   </div>
 
+  <script>
+    function randomColor() {
+      const colors = [
+        ['#ff9999', '#ff6666'],
+        ['#ffbf80', '#ff9933'],
+        ['#ffff99', '#ffff66'],
+        ['#99ff99', '#66ff66'],
+        ['#80bfff', '#3399ff'],
+        ['#cc99ff', '#9966ff']
+      ];
+      const colorPair = colors[Math.floor(Math.random() * colors.length)];
+      return `radial-gradient(circle at 50% 30%, ${colorPair[0]}, ${colorPair[1]})`;
+    }
 
-  <script src="./assets/js/main.js"></script>
-  <script src="./assets/js/color-mode.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+    function createBalloon() {
+      const balloonContainer = document.createElement("div");
+      balloonContainer.classList.add("balloon-container");
+      balloonContainer.style.left = Math.random() * 100 + "vw";
+
+      const balloon = document.createElement("div");
+      balloon.classList.add("balloon");
+      balloon.style.background = randomColor();
+      balloonContainer.appendChild(balloon);
+
+      const rope = document.createElement("div");
+      rope.classList.add("rope");
+      balloonContainer.appendChild(rope);
+
+      document.body.appendChild(balloonContainer);
+
+      balloon.addEventListener("click", function popBalloon() {
+        balloon.style.animation = "popBalloon 0.5s forwards";
+        rope.style.animation = "popBalloon 0.5s forwards";
+
+        setTimeout(() => {
+          balloonContainer.remove();
+        }, 500);
+      });
+    }
+
+    function startSurprise() {
+      document.querySelector("button").style.display = "none";
+      document.getElementById("message").style.display = "block";
+
+      setInterval(createBalloon, 300);
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+
 </body>
 
 </html>
