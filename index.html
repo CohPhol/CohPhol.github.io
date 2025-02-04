@@ -4,76 +4,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lenticular Animation</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <title>Document</title>
   <style>
     body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background: #222;
-      overflow: hidden;
       margin: 0;
-    }
-
-    .card {
-      display: flex;
-      --boards: 16;
-      --dimension: calc(var(--boards) * 3px);
-      --width: calc(var(--dimension) / var(--boards));
-      transform-style: preserve-3d;
-      transform: rotateY(var(--angle, -42deg)) rotateX(var(--angle-x, 0.25deg));
-      animation: flip 2500ms 0ms infinite alternate ease-in-out;
-      list-style: none;
       padding: 0;
-    }
-
-    li {
-      height: var(--dimension);
-      width: var(--width);
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      height: 100vh;
       position: relative;
-      transform-style: preserve-3d;
+      transition: background-color 0.3s, color 0.3s;
     }
 
-    li::before,
-    li::after {
-      background-repeat: no-repeat;
-      background-size: var(--dimension) calc(var(--dimension) * 9 / 16);
-      background-position: calc(var(--offset-x, 0) * var(--dimension)) center;
+    body.dark-mode {
+      background-color: #1c1c1c;
+      color: #ffffff;
+    }
+
+    #button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      z-index: 10;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    button {
+      padding: 15px 30px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .balloon-container {
+      position: absolute;
+      bottom: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      animation: floatBalloon 8s ease-in-out infinite;
+    }
+
+    .balloon {
+      width: 60px;
+      height: 80px;
+      background: radial-gradient(circle at 50% 30%, #ff6666, #ff3333);
+      border-radius: 50% 50% 45% 45%;
+      box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+
+    .balloon::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      transform: rotateY(calc(60deg * var(--direction, -1)));
-      transform-origin: var(--origin-x, 100%) 50% 0px;
+      top: 10%;
+      left: 20%;
+      width: 15px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
     }
 
-    li::before {
-      background-image: url('./assets/images/2.jpg');
+    .rope {
+      width: 2px;
+      height: 100px;
+      background: linear-gradient(to bottom, #a3a3a3 50%, #7d7d7d);
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      animation: wobble 0.3s ease-in-out infinite;
     }
 
-    li::after {
-      background-image: url('./assets/images/1.jpg');
-      --direction: 1;
-      --origin-x: 0%;
-    }
-
-    @keyframes flip {
+    @keyframes floatBalloon {
       0% {
-        --angle: -42deg;
+        transform: translate(-50%, 0);
+        opacity: 1;
       }
 
       100% {
-        --angle: 42deg;
+        transform: translate(-50%, -150vh);
+        opacity: 0;
+      }
+    }
+
+    @keyframes wobble {
+      0% {
+        transform: translateX(-50%) rotate(-1deg);
+      }
+
+      100% {
+        transform: translateX(-50%) rotate(1deg);
+      }
+    }
+
+    @keyframes popBalloon {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+
+    #message {
+      font-size: 22px;
+      font-weight: bold;
+      display: none;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    body.dark-mode #message {
+      color: #ffffff;
+    }
+
+    #dark-mode-toggle {
+      margin-top: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    #dark-mode-toggle:hover {
+      background-color: #555;
+    }
+
+    @media only screen and (max-width: 600px) {
+      button {
+        font-size: 16px;
+        padding: 12px 24px;
+      }
+
+      #message {
+        font-size: 20px;
+      }
+
+      .balloon {
+        width: 40px;
+        height: 60px;
+      }
+
+      .rope {
+        height: 80px;
       }
     }
   </style>
 </head>
 
 <body>
+<<<<<<< HEAD
   <ul class="card">
     <li></li>
     <li></li>
@@ -388,46 +496,67 @@
     <li></li>
     <li></li>
   </ul>
+=======
+
+  <div id="button-container">
+    <button onclick="startSurprise()">Click me!</button>
+    <div id="message">Wag ka na mastress</div>
+    <button id="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  </div>
+>>>>>>> parent of cf2088b (Lenticular)
 
   <script>
-    let card = document.querySelector('.card');
-    let boards = Array.from(card.querySelectorAll('li'));
+    function randomColor() {
+      const colors = [
+        ['#ff9999', '#ff6666'],
+        ['#ffbf80', '#ff9933'],
+        ['#ffff99', '#ffff66'],
+        ['#99ff99', '#66ff66'],
+        ['#80bfff', '#3399ff'],
+        ['#cc99ff', '#9966ff']
+      ];
+      const colorPair = colors[Math.floor(Math.random() * colors.length)];
+      return `radial-gradient(circle at 50% 30%, ${colorPair[0]}, ${colorPair[1]})`;
+    }
 
-    // Set CSS variable for the number of boards
-    card.style.setProperty('--boards', boards.length);
+    function createBalloon() {
+      const balloonContainer = document.createElement("div");
+      balloonContainer.classList.add("balloon-container");
+      balloonContainer.style.left = Math.random() * 100 + "vw";
 
-    // Set background offset for each board
-    boards.forEach((board, i) => {
-      board.style.setProperty('--offset-x', -i / (boards.length - 1));
-    });
+      const balloon = document.createElement("div");
+      balloon.classList.add("balloon");
+      balloon.style.background = randomColor();
+      balloonContainer.appendChild(balloon);
 
-    const TOTAL_DEGREES = 84;
-    let clientWidth = window.innerWidth;
-    let step = TOTAL_DEGREES / clientWidth;
+      const rope = document.createElement("div");
+      rope.classList.add("rope");
+      balloonContainer.appendChild(rope);
 
-    // Adjust angle on pointer move
-    if ('PointerEvent' in window) {
-      card.style.animationIterationCount = 2;
-      document.body.addEventListener('pointermove', e => {
-        card.style.setProperty('--angle', `${-42 + (e.clientX * step)}deg`);
+      document.body.appendChild(balloonContainer);
+
+      balloon.addEventListener("click", function popBalloon() {
+        balloon.style.animation = "popBalloon 0.5s forwards";
+        rope.style.animation = "popBalloon 0.5s forwards";
+
+        setTimeout(() => {
+          balloonContainer.remove();
+        }, 500);
       });
     }
 
-    // Adjust step on resize
-    window.addEventListener('resize', () => {
-      clientWidth = window.innerWidth;
-      step = TOTAL_DEGREES / clientWidth;
-    });
+    function startSurprise() {
+      document.querySelector("button").style.display = "none";
+      document.getElementById("message").style.display = "block";
 
-    // Device orientation support
-    if (window.DeviceOrientationEvent) {
-      card.style.animationIterationCount = 2;
-      window.addEventListener('deviceorientation', (e) => {
-        let amount = (e.gamma / 12);
-        card.style.setProperty('--angle', `${-e.gamma}deg`);
-      });
+      setInterval(createBalloon, 300);
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
     }
   </script>
+
 </body>
 
 </html>
