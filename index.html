@@ -51,10 +51,11 @@
     }
 
     .balloon-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       position: absolute;
       bottom: -70px;
-      left: 50%;
-      transform: translateX(-50%);
       z-index: 5;
       animation: floatBalloon 8s ease-in-out infinite;
     }
@@ -175,6 +176,8 @@
 
       .rope {
         height: 80px;
+        /* width: 1.5px; */
+        bottom: -80px;
       }
     }
   </style>
