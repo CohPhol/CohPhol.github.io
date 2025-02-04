@@ -23,7 +23,8 @@
       --dimension: calc(var(--boards) * 3px);
       --width: calc(var(--dimension) / var(--boards));
       transform-style: preserve-3d;
-      transform: rotateY(var(--angle, -42deg));
+      transform: rotateY(var(--angle, -42deg)) rotateX(var(--angle-x, 0.25deg));
+      animation: flip 2500ms 0ms infinite alternate ease-in-out;
       list-style: none;
       padding: 0;
     }
@@ -58,6 +59,16 @@
       background-image: url('./assets/images/1.jpg');
       --direction: 1;
       --origin-x: 0%;
+    }
+
+    @keyframes flip {
+      0% {
+        --angle: -42deg;
+      }
+
+      100% {
+        --angle: 42deg;
+      }
     }
   </style>
 </head>
@@ -206,66 +217,216 @@
     <li></li>
     <li></li>
     <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
   </ul>
 
   <script>
-    const card = document.querySelector('.card');
-    const boards = Array.from(card.querySelectorAll('li'));
+    let card = document.querySelector('.card');
+    let boards = Array.from(card.querySelectorAll('li'));
 
     // Set CSS variable for the number of boards
     card.style.setProperty('--boards', boards.length);
 
+    // Set background offset for each board
     boards.forEach((board, i) => {
       board.style.setProperty('--offset-x', -i / (boards.length - 1));
     });
 
-    let startX = 0;
-    let currentAngle = -42;  // Initial angle
     const TOTAL_DEGREES = 84;
-    const MAX_ANGLE = 42;
+    let clientWidth = window.innerWidth;
+    let step = TOTAL_DEGREES / clientWidth;
 
-    function updateAngle(newX) {
-      const delta = newX - startX;
-      const percentage = delta / window.innerWidth;
-      currentAngle = Math.max(-MAX_ANGLE, Math.min(MAX_ANGLE, currentAngle + percentage * TOTAL_DEGREES));
-      card.style.setProperty('--angle', `${currentAngle}deg`);
+    // Adjust angle on pointer move
+    if ('PointerEvent' in window) {
+      card.style.animationIterationCount = 2;
+      document.body.addEventListener('pointermove', e => {
+        card.style.setProperty('--angle', `${-42 + (e.clientX * step)}deg`);
+      });
     }
 
-    card.addEventListener('mousedown', (e) => {
-      e.preventDefault();
-      startX = e.clientX;
-      card.style.animation = 'none';
-      document.addEventListener('mousemove', onMove);
-      document.addEventListener('mouseup', onEnd);
-    });
-
-    card.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-      card.style.animation = 'none';
-      document.addEventListener('touchmove', onMoveTouch);
-      document.addEventListener('touchend', onEnd);
-    });
-
-    function onMove(e) {
-      updateAngle(e.clientX);
-    }
-
-    function onMoveTouch(e) {
-      updateAngle(e.touches[0].clientX);
-    }
-
-    function onEnd() {
-      document.removeEventListener('mousemove', onMove);
-      document.removeEventListener('touchmove', onMoveTouch);
-      document.removeEventListener('mouseup', onEnd);
-      document.removeEventListener('touchend', onEnd);
-    }
-
-    // Adjust step on window resize
+    // Adjust step on resize
     window.addEventListener('resize', () => {
-      currentAngle = -42;
-      card.style.setProperty('--angle', `${currentAngle}deg`);
+      clientWidth = window.innerWidth;
+      step = TOTAL_DEGREES / clientWidth;
     });
+
+    // Device orientation support
+    if (window.DeviceOrientationEvent) {
+      card.style.animationIterationCount = 2;
+      window.addEventListener('deviceorientation', (e) => {
+        let amount = (e.gamma / 12);
+        card.style.setProperty('--angle', `${-e.gamma}deg`);
+      });
+    }
   </script>
 </body>
 
