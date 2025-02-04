@@ -205,7 +205,12 @@
       return `radial-gradient(circle at 50% 30%, ${colorPair[0]}, ${colorPair[1]})`;
     }
 
+    let balloonCount = 0;
+    const balloonLimit = 30;
+
     function createBalloon() {
+      if (balloonCount >= balloonLimit) return;
+
       const balloonContainer = document.createElement("div");
       balloonContainer.classList.add("balloon-container");
       balloonContainer.style.left = Math.random() * 100 + "vw";
@@ -220,6 +225,7 @@
       balloonContainer.appendChild(rope);
 
       document.body.appendChild(balloonContainer);
+      balloonCount++;
 
       balloon.addEventListener("click", function popBalloon() {
         balloon.style.animation = "popBalloon 0.5s forwards";
@@ -235,8 +241,15 @@
       document.querySelector("button").style.display = "none";
       document.getElementById("message").style.display = "block";
 
-      setInterval(createBalloon, 300);
+      const interval = setInterval(() => {
+        if (balloonCount < balloonLimit) {
+          createBalloon();
+        } else {
+          clearInterval(interval);
+        }
+      }, 300);
     }
+
 
     function toggleDarkMode() {
       document.body.classList.toggle("dark-mode");
