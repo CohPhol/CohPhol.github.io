@@ -1,193 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lenticular Animation</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background: #222;
-      overflow: hidden;
-      margin: 0;
-    }
-
-    .card {
-      display: flex;
-      --boards: 16;
-      --dimension: min(90vw, 480px);
-      /* fixed width of the whole card */
-      --width: calc(var(--dimension) / var(--boards));
-      transform-style: preserve-3d;
-      transform: rotateY(var(--angle, -42deg)) rotateX(var(--angle-x, 0.25deg));
-      animation: flip 2500ms 0ms infinite alternate ease-in-out;
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      height: calc(var(--dimension) * 9 / 16);
-      /* 16:9 ratio */
-      width: var(--width);
-      position: relative;
-      transform-style: preserve-3d;
-    }
-
-    li::before,
-    li::after {
-      background-repeat: no-repeat;
-      background-size: var(--dimension) calc(var(--dimension) * 9 / 16);
-      background-position: calc(var(--offset-x, 0) * var(--dimension)) center;
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      backface-visibility: hidden;
-      transition: opacity 0.4s ease;
-    }
-
-    li::before {
-      background-image: url('./assets/images/2.jpg');
-      opacity: var(--before-opacity, 1);
-    }
-
-    li::after {
-      background-image: url('./assets/images/1.jpg');
-      opacity: var(--after-opacity, 0);
-    }
-
-    @keyframes flip {
-      0% {
-        --angle: -42deg;
-      }
-
-      100% {
-        --angle: 42deg;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <ul class="card">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
-
-  <script>
-    let card = document.querySelector('.card');
-    let boards = Array.from(card.querySelectorAll('li'));
-
-    card.style.setProperty('--boards', boards.length);
-
-    boards.forEach((board, i) => {
-      board.style.setProperty('--offset-x', -i / (boards.length - 1));
-    });
-
-    const TOTAL_DEGREES = 84;
-    let clientWidth = window.innerWidth;
-    let step = TOTAL_DEGREES / clientWidth;
-
-    let targetAngle = -42;
-    let currentAngle = -42;
-    let ticking = false;
-
-    function updateAngle() {
-      currentAngle += (targetAngle - currentAngle) * 0.15;
-      card.style.setProperty('--angle', `${currentAngle}deg`);
-
-
-      boards.forEach(board => {
-        const before = board.querySelector('::before');
-        const after = board.querySelector('::after');
-      });
-
-      const beforeOpacity = (42 - currentAngle) / 84;
-      const afterOpacity = (42 + currentAngle) / 84;
-      card.style.setProperty('--before-opacity', beforeOpacity);
-      card.style.setProperty('--after-opacity', afterOpacity);
-
-      ticking = false;
-      if (Math.abs(targetAngle - currentAngle) > 0.1) {
-        requestAnimationFrame(updateAngle);
-      }
-    }
-
-
-    function requestUpdate(newAngle) {
-      targetAngle = newAngle;
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(updateAngle);
-      }
-    }
-
-
-    if ('PointerEvent' in window) {
-      card.style.animationIterationCount = 2;
-      document.body.addEventListener('pointermove', e => {
-        requestUpdate(-42 + (e.clientX * step));
-      });
-    }
-
-
-    window.addEventListener('resize', () => {
-      clientWidth = window.innerWidth;
-      step = TOTAL_DEGREES / clientWidth;
-    });
-
-
-    // if (window.DeviceOrientationEvent) {
-    //   card.style.animationIterationCount = 2;
-    //   window.addEventListener('deviceorientation', (e) => {
-    //     if (typeof e.gamma === "number") {
-    //       requestUpdate(-e.gamma);
-    //     }
-    //   });
-    // }
-
-    if (window.DeviceOrientationEvent) {
-      card.style.animationIterationCount = 2;
-      window.addEventListener('deviceorientation', (e) => {
-        if (typeof e.gamma === "number") {
-          // gamma = left (-) / right (+)
-          // Clamp to [-42, 42] so it matches your TOTAL_DEGREES
-          let angle = Math.max(-42, Math.min(42, e.gamma));
-          requestUpdate(angle);
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>💘 Valentine?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
         }
-      });
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #ff4d6d;
+            font-size: 2.2rem;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        button {
+            font-size: 1.1rem;
+            padding: 12px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        .yes:hover {
+            transform: scale(1.1);
+        }
+
+        .no {
+            background-color: #ddd;
+            position: absolute;
+        }
+
+        .heart {
+            font-size: 3rem;
+            animation: pulse 1.2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="heart">💖</div>
+    <h1>Will you be my Valentine?</h1>
+
+    <div class="buttons">
+        <button class="yes" onclick="yesClicked()">Yes 💕</button>
+        <button class="no" id="noBtn">No 🙃</button>
+    </div>
+</div>
+
+<script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", () => {
+        const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
+
+    function yesClicked() {
+        document.body.innerHTML = `
+            <div style="
+                height:100vh;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                flex-direction:column;
+                background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+                font-family: Arial;
+                text-align:center;
+            ">
+                <h1 style="color:#ff4d6d; font-size:3rem;">YAY!!! 💘💘💘</h1>
+                <p style="font-size:1.5rem;">Happy Valentine’s Day, my love 🥰</p>
+                <div style="font-size:4rem;">💖💖💖</div>
+            </div>
+        `;
     }
-  </script>
+</script>
 
 </body>
-
 </html>
